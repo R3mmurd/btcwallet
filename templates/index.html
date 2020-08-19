@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1 class="pagetitle">Welcome {{ username }}</h1>
+
+    {% if wallets %}
+        <h2>Wallets</h2>
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Balance</th>
+                <th scope="col">Actions</th>
+            </thead>
+            <tbody>
+            {% for wallet in wallets %}
+                <tr>
+                    <td>{{ wallet['#'] }}</td>
+                    <td>{{ wallet['name'] }}</td>
+                    <td>{{ wallet['address'] }}</td>
+                    <td>{{ wallet['balance'] }}</td>
+                    <td>
+                        <a title="Send" data-toggle="tooltip" href="/wallet/send/{{ wallet['id'] }}"><i class="fa fa-send"></i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip" href="/wallet/{{ wallet['id'] }}"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>You don't have any wallets yet.</h2>
+    {% endif %}
+    
+    <a id="btn-new-wallet" class="btn btn-outline-primary" role="button" href="/wallet">Create new wallet</a>
+
+{% endblock %}

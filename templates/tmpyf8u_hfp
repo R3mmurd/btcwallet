@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1 class="pagetitle">Transaction history</h1>
+
+    {% if rows %}
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Tx hash</th>
+                <th scope="col">Destination address</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Datetime</th>
+            </thead>
+            <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row['#'] }}</td>
+                    <td>{{ row['transaction_id'] }}</td>
+                    <td>{{ row['address_to'] }}</td>
+                    <td>{{ row['amount'] }}</td>
+                    <td>{{ row['datetime'] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>You have not done any transactions yet.</h2>
+    {% endif %}
+
+
+{% endblock %}

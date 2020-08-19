@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete wallet
+{% endblock %}
+
+{% block main %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Warning!</h4>
+        <p>You are going to delete a wallet with <strong>{{ balance }} BTC</strong></p>
+    </div>
+    <form action="/wallet/{{ wallet_id }}" method="POST">
+        <div class=form-group>
+            <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+
+{% endblock %}

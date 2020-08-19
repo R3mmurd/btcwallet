@@ -1,0 +1,57 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+
+.loginhere {
+    text-align: center;
+    color: #888;
+    margin-top: 30px;
+}
+
+.pagetitle {
+    margin-bottom: 50px;
+}
+
+#btn-new-wallet {
+    margin-top: 50px;
+}
+
+.fa {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fa-trash {
+    color: red;
+}
+
+.wallet_info {
+    margin-bottom: 30px;
+}

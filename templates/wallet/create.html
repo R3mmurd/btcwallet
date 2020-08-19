@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create wallet
+{% endblock %}
+
+{% block main %}
+    <h1 class="pagetitle">Create new wallet</h1>
+
+    <form action="/wallet/" method="POST">
+        <div class=form-group>
+            <input type="text" name="name" class="form-control" placeholder="Name">
+        </div>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </form>
+
+{% endblock %}

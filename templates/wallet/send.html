@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Send
+{% endblock %}
+
+{% block main %}
+    <h1 class="pagetitle">Send Bitcoins</h1>
+    <h5 class="wallet_info">Adress: {{ wallet['address'] }}</h5>
+    <h5 class="wallet_info">Balance: {{ balance }}</h5>
+
+    <form action="/wallet/send/{{ wallet['id'] }}" method="POST">
+        <div class="form-group">
+            <input class="form-control" type="text" name="dest_address" placeholder="Destination Address">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="amount" placeholder="Amount">
+        </div>
+        <div class=form-group>
+            <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+{% endblock %}
